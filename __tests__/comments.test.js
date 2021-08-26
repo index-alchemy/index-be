@@ -33,7 +33,7 @@ describe('test /api/v1/comments routes', () => {
       .send({
         name: 'test sprint',
         cohort: '2021-08mar',
-        result: null,
+        results: null,
       })
     ).body;
     
@@ -52,15 +52,17 @@ describe('test /api/v1/comments routes', () => {
 
   afterAll(() => setup(pool));
 
-  test('POST to /api/v1/comments/', async () => {
+  test.only('POST to /api/v1/comments/', async () => {
     const comment = (await agent
-      .post('/api/v1/comments')
+      .post('/api/v1/comments/')
       .send({
         userId: user.id,
         pitchId: pitch.id,
         comment: 'very cool idea. What if you used Elm?',
       })
     ).body;
+
+    console.log(comment);
 
     expect(comment).toEqual({
       id: '1',
