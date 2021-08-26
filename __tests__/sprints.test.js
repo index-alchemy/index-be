@@ -75,5 +75,14 @@ describe('sprints routes', () => {
       { ...two, createdAt: expect.any(String) }
    ]);
   });
+
+  it('gets a sprint by id', async () => {
+    const one = await Sprint.createSprint(sprint1);
+
+    const res = await agent 
+      .get(`/api/v1/sprints/1`);
+
+    expect(res.body).toEqual({ ...one, createdAt: expect.any(String) });
+  })
 })
 
