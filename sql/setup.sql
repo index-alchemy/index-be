@@ -16,3 +16,4 @@ CREATE TABLE preferences (
   sprint_id BIGINT REFERENCES sprints(id) ON DELETE CASCADE,
   preference TEXT[] NOT NULL
 )
+
