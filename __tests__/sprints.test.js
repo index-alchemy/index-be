@@ -68,7 +68,6 @@ describe('sprints routes', () => {
 
     const res = await agent
       .get('/api/v1/sprints');
-      console.log(res.body);
 
     expect(res.body).toEqual([
       { ...one, createdAt: expect.any(String) },
@@ -81,6 +80,20 @@ describe('sprints routes', () => {
 
     const res = await agent 
       .get(`/api/v1/sprints/1`);
+
+    expect(res.body).toEqual({ ...one, createdAt: expect.any(String) });
+  })
+
+  it('updates a sprint', async () => {
+    const one = await Sprint.createSprint(sprint1);
+
+    one.cohort = 'march 2020';
+
+    const res = await agent
+      .put('/api/v1/sprints/1')
+      .send(one);
+
+    console.log('one', res.body);
 
     expect(res.body).toEqual({ ...one, createdAt: expect.any(String) });
   })
