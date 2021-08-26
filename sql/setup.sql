@@ -32,4 +32,4 @@ CREATS TABLE sprints (
   cohort TEXT,
   results JSON,
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
-)
+);
