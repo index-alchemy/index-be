@@ -16,8 +16,8 @@ CREATE TABLE users (
 CREATE TABLE sprints (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   name TEXT NOT NULL,
-  cohort TEXT,
-  results JSON,
+  cohort TEXT NOT NULL,
+  result JSON,
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
