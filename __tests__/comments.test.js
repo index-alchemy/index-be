@@ -19,7 +19,7 @@ describe('test /api/v1/comments routes', () => {
         cohort: '2021-08mar',
         password: 'test'
       })
-    ;
+      ;
 
     // log in a user
     user = (await agent
@@ -36,7 +36,7 @@ describe('test /api/v1/comments routes', () => {
         results: null,
       })
     ).body;
-    
+
     // create a pitch
     pitch = (await agent
       .post('/api/v1/pitches')
@@ -82,7 +82,7 @@ describe('test /api/v1/comments routes', () => {
         pitchId: pitch.id,
         comment: 'very cool idea. What if you used Elm?',
       })
-    ;
+      ;
 
     // get all comments from a user
     const commentsByUser = (await agent
@@ -122,7 +122,7 @@ describe('test /api/v1/comments routes', () => {
         pitchId: pitch.id,
         comment: 'very cool idea. What if you used Elm?',
       })
-    ;
+      ;
 
     // delete the comment
     const deleted = (await agent.delete(`/api/v1/comments/${pitch.id}`)).body;
