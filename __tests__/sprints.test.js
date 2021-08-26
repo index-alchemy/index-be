@@ -47,7 +47,7 @@ describe('sprints routes', () => {
     cohort: 'march 2021',
   };
 
-  it.only('creates a sprint', async () => {
+  it('creates a sprint', async () => {
     const res = await agent
       .post('/api/v1/sprints')
       .send(sprint1)
@@ -59,5 +59,21 @@ describe('sprints routes', () => {
       result: null,
       createdAt: expect.any(String)
     })
-  })
+  });
+
+  it('it gets all sprints', async () => {
+    const one = await Sprint.createSprint(sprint1);
+    const two = await Sprint.createSprint(sprint2);
+    
+
+    const res = await agent
+      .get('/api/v1/sprints');
+      console.log(res.body);
+
+    expect(res.body).toEqual([
+      { ...one, createdAt: expect.any(String) },
+      { ...two, createdAt: expect.any(String) }
+   ]);
+  });
 })
+
