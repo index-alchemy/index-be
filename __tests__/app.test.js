@@ -7,4 +7,8 @@ describe('demo routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
+
+  test('GET /api/v1/auth/signup', () => {
+    console.log('hi test');
+  });
 });
