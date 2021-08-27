@@ -7,9 +7,9 @@ describe('test /api/v1/comments routes', () => {
   const agent = request.agent(app);
   let user, sprint, pitch;
 
-  beforeAll(() => setup(pool));
-
   beforeEach(async () => {
+    await setup(pool);
+
     // sign up a user
     await agent
       .post('/api/v1/auth/signup')
@@ -19,7 +19,7 @@ describe('test /api/v1/comments routes', () => {
         cohort: '2021-08mar',
         password: 'test'
       })
-      ;
+    ;
 
     // log in a user
     user = (await agent
@@ -32,8 +32,7 @@ describe('test /api/v1/comments routes', () => {
       .post('/api/v1/sprints')
       .send({
         name: 'test sprint',
-        cohort: '2021-08mar',
-        results: null,
+        cohort: '2021-08mar'
       })
     ).body;
 
@@ -43,16 +42,13 @@ describe('test /api/v1/comments routes', () => {
       .send({
         userId: user.id,
         sprintId: sprint.id,
-        pitch: 'test pitch'
+        pitch: 'curbee',
+        description: 'communist free stuff alert system'
       })
     ).body;
-
-    return setup(pool);
   });
 
-  afterAll(() => setup(pool));
-
-  test.only('POST to /api/v1/comments/', async () => {
+  test('POST to /api/v1/comments/', async () => {
     const comment = (await agent
       .post('/api/v1/comments/')
       .send({
@@ -61,8 +57,6 @@ describe('test /api/v1/comments routes', () => {
         comment: 'very cool idea. What if you used Elm?',
       })
     ).body;
-
-    console.log(comment);
 
     expect(comment).toEqual({
       id: '1',
@@ -110,26 +104,49 @@ describe('test /api/v1/comments routes', () => {
       comment: expect.any(String),
       createdAt: expect.any(String)
     }]);
-
   });
 
-  test('DELETE to /api/v1/comments/:id', async () => {
+  test('PUT to /api/v1/comments/:id/', async () => {
     // post a comment 
-    await agent
+    const comment = (await agent
       .post('/api/v1/comments')
       .send({
         userId: user.id,
         pitchId: pitch.id,
         comment: 'very cool idea. What if you used Elm?',
       })
-      ;
+    ).body;
+
+    // update the comment
+    const res = await agent
+      .put(`/api/v1/comments/${comment.id}`)
+      .send({ comment: 'EDIT: nvm, this sucks' })
+    ;
+
+    // test
+    expect(res.body).toEqual({
+      ...comment,
+      comment: 'EDIT: nvm, this sucks'
+    });
+  });
+
+  test('DELETE to /api/v1/comments/:id', async () => {
+    // post a comment 
+    const comment = (await agent
+      .post('/api/v1/comments')
+      .send({
+        userId: user.id,
+        pitchId: pitch.id,
+        comment: 'very cool idea. What if you used Elm?',
+      })
+    ).body;
 
     // delete the comment
-    const deleted = (await agent.delete(`/api/v1/comments/${pitch.id}`)).body;
+    const deleted = (await agent.delete(`/api/v1/comments/${comment.id}`)).body;
 
     // get all comments on a pitch
     const comments = (await agent
-      .get(`/api/v1/comments/pitch/${pitch.id}`)
+      .get(`/api/v1/comments/pitch/${pitch.id}/`)
     ).body;
 
     // test
