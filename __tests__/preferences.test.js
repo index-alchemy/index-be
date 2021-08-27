@@ -9,6 +9,7 @@ describe('preferences routes', () => {
 
   const agent = request.agent(app);
   let user;
+  let sprint;
 
   beforeEach(async () => {
     await setup(pool);
@@ -29,6 +30,15 @@ describe('preferences routes', () => {
         password: 'password'
       });
 
+    sprint = (await agent
+      .post(`/api/v1/sprints/`)
+      .send({
+        name: 'sprint 1',
+        cohort: 'Mar 2021'
+      })
+    ).body;
+
+
     return user;
   });
 
@@ -36,22 +46,66 @@ describe('preferences routes', () => {
     id: '1',
     userId: '1',
     sprintId: '1',
-    preference: []
+    preference: ['1', '2', '3', '4']
   }
 
-  const preference2 = {
-    id: '2',
-    userId: '1',
-    sprintId: '2',
-    preference: []
-  }
+  it('creates a preference', async () => {
+    const res = await agent
+      .post('/api/v1/preferences')
+      .send(preference1)
 
-  const preference3 = {
-    id: '3',
-    userId: '1',
-    sprintId: '3',
-    preference: []
-  }
+    expect(res.body).toEqual({
+      id: '1',
+      userId: '1',
+      sprintId: '1',
+      preference: ['1', '2', '3', '4']
+    })
+  })
+
+  it('gets all preferences', async () => {
+    await Preference.create(preference1);
+    const res = await agent
+      .get('/api/v1/preferences')
+
+    expect(res.body).toEqual([preference1])
+  })
+
+  it('gets a preference by id', async () => {
+    await Preference.create(preference1);
+    const res = await agent
+      .get(`/api/v1/preferences/${preference1.id}`)
+
+    expect(res.body).toEqual(preference1)
+  })
+
+  it('updates a preference', async () => {
+    await Preference.create(preference1);
+    const res = await agent
+      .put(`/api/v1/preferences/${preference1.id}`)
+      .send({
+        preference: ['1', '2', '4', '3']
+      })
+
+    expect(res.body).toEqual({
+      id: '1',
+      userId: '1',
+      sprintId: '1',
+      preference: ['1', '2', '4', '3']
+    })
+  })
+
+  it('deletes a preference', async () => {
+    await Preference.create(preference1);
+    const res = await agent
+      .delete(`/api/v1/preferences/${preference1.id}`)
+
+    expect(res.body).toEqual({
+      id: '1',
+      userId: '1',
+      sprintId: '1',
+      preference: ['1', '2', '3', '4']
+    })
+  })
 
 
 
