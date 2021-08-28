@@ -18,7 +18,7 @@ describe('auth routes', () => {
 
   test('Post a user to auth/signup', async () => {
     const res = await request(app)
-      .post('/api/v1/auth/signup')
+      .post('/api/v1/users/auth/signup')
       .send(user);
 
     expect(res.body).toEqual({
@@ -34,11 +34,11 @@ describe('auth routes', () => {
   test('logs a user in via Post', async () => {
 
     await request(app)
-      .post('/api/v1/auth/signup')
+      .post('/api/v1/users/auth/signup')
       .send(user);
 
     const res = await request(app)
-      .post('/api/v1/auth/login')
+      .post('/api/v1/users/auth/login')
       .send({
         email: user.email,
         password: user.password

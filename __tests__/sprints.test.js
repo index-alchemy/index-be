@@ -14,7 +14,7 @@ describe('sprints routes', () => {
     await setup(pool);
 
     user = (await agent
-      .post('/api/v1/auth/signup')
+      .post('/api/v1/users/auth/signup')
       .send({
       name: 'clem',
       email: 'clem@clem.clem',
@@ -23,7 +23,7 @@ describe('sprints routes', () => {
     })).body;
 
     await agent
-      .post('/api/v1/auth/login')
+      .post('/api/v1/users/auth/login')
       .send({
         email: 'clem@clem.clem',
         password: 'password'
@@ -93,9 +93,6 @@ describe('sprints routes', () => {
       .put('/api/v1/sprints/1')
       .send(one);
 
-    console.log('one', res.body);
-
     expect(res.body).toEqual({ ...one, createdAt: expect.any(String) });
   })
 })
-
