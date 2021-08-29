@@ -1,218 +1,228 @@
-sprints = [
+const sprints = [
   {
     "name": "Foundations I",
-    "cohort": "Spring 2019",
+    "cohort": "19-03",
   },
   {
     "name": "Foundations II",
-    "cohort": "Spring 2019",
+    "cohort": "19-03",
   },
   {
     "name": "Career Track Mid",
-    "cohort": "Spring 2019",
+    "cohort": "19-03",
   },
   {
     "name": "Career Track Final",
-    "cohort": "Spring 2019",
+    "cohort": "19-03",
   },
   {
     "name": "Foundations I",
-    "cohort": "Summer 2019",
+    "cohort": "19-06",
   },
   {
     "name": "Foundations II",
-    "cohort": "Summer 2019",
+    "cohort": "19-06",
   },
   {
     "name": "Career Track Mid",
-    "cohort": "Summer 2019",
+    "cohort": "19-06",
   },
   {
     "name": "Career Track Final",
-    "cohort": "Summer 2019",
+    "cohort": "19-06",
   },
   {
     "name": "Foundations I",
-    "cohort": "Fall 2019",
+    "cohort": "19-09",
   },
   {
     "name": "Foundations II",
-    "cohort": "Fall 2019",
+    "cohort": "19-09",
   },
   {
     "name": "Career Track Mid",
-    "cohort": "Fall 2019",
+    "cohort": "19-09",
   },
   {
     "name": "Career Track Final",
-    "cohort": "Fall 2019",
+    "cohort": "19-09",
   },
   {
     "name": "Foundations I",
-    "cohort": "Winter 2020",
+    "cohort": "20-01",
   },
   {
     "name": "Foundations II",
-    "cohort": "Winter 2020",
+    "cohort": "20-01",
   },
   {
     "name": "Career Track Mid",
-    "cohort": "Winter 2020",
+    "cohort": "20-01",
   },
   {
     "name": "Career Track Final",
-    "cohort": "Winter 2020",
+    "cohort": "20-01",
   },
   {
     "name": "Foundations I",
-    "cohort": "Spring 2020",
+    "cohort": "20-03",
   },
   {
     "name": "Foundations II",
-    "cohort": "Spring 2020",
+    "cohort": "20-03",
   },
   {
     "name": "Career Track Mid",
-    "cohort": "Spring 2020",
+    "cohort": "20-03",
   },
   {
     "name": "Career Track Final",
-    "cohort": "Spring 2020",
+    "cohort": "20-03",
   },
   {
     "name": "Foundations I",
-    "cohort": "Summer 2020",
+    "cohort": "20-06",
   },
   {
     "name": "Foundations II",
-    "cohort": "Summer 2020",
+    "cohort": "20-06",
   },
   {
     "name": "Career Track Mid",
-    "cohort": "Summer 2020",
+    "cohort": "20-06",
   },
   {
     "name": "Career Track Final",
-    "cohort": "Summer 2020",
+    "cohort": "20-06",
   },
   {
     "name": "Foundations I",
-    "cohort": "Fall 2020",
+    "cohort": "20-09",
   },
   {
     "name": "Foundations II",
-    "cohort": "Fall 2020",
+    "cohort": "20-09",
   },
   {
     "name": "Career Track Mid",
-    "cohort": "Fall 2020",
+    "cohort": "20-09",
   },
   {
     "name": "Career Track Final",
-    "cohort": "Fall 2020",
+    "cohort": "20-09",
   },
   {
     "name": "Foundations I",
-    "cohort": "January 2021",
+    "cohort": "21-01",
   },
   {
     "name": "Foundations II",
-    "cohort": "January 2021",
+    "cohort": "21-01",
   },
   {
     "name": "Career Track Mid",
-    "cohort": "January 2021",
+    "cohort": "21-01",
   },
   {
     "name": "Career Track Final",
-    "cohort": "January 2021",
+    "cohort": "21-01",
   },
   {
     "name": "Foundations I",
-    "cohort": "March 2021",
+    "cohort": "21-03",
   },
   {
     "name": "Foundations II",
-    "cohort": "March 2021",
+    "cohort": "21-03",
   },
   {
     "name": "Career Track Mid",
-    "cohort": "March 2021",
+    "cohort": "21-03",
   },
   {
     "name": "Career Track Final",
-    "cohort": "March 2021",
+    "cohort": "21-03",
   },
   {
     "name": "Foundations I",
-    "cohort": "April 2021",
+    "cohort": "21-04",
   },
   {
     "name": "Foundations II",
-    "cohort": "April 2021",
+    "cohort": "21-04",
   },
   {
     "name": "Career Track Mid",
-    "cohort": "April 2021",
+    "cohort": "21-04",
   },
   {
     "name": "Career Track Final",
-    "cohort": "April 2021",
+    "cohort": "21-04",
   },
   {
     "name": "Foundations I",
-    "cohort": "June 2021",
+    "cohort": "21-06",
   },
   {
     "name": "Foundations II",
-    "cohort": "June 2021",
+    "cohort": "21-06",
   },
   {
     "name": "Career Track Mid",
-    "cohort": "June 2021",
+    "cohort": "21-06",
   },
   {
     "name": "Career Track Final",
-    "cohort": "June 2021",
+    "cohort": "21-06",
   },
   {
     "name": "Foundations I",
-    "cohort": "August 2021",
+    "cohort": "21-08",
   },
   {
     "name": "Foundations II",
-    "cohort": "August 2021",
+    "cohort": "21-08",
   },
   {
     "name": "Career Track Mid",
-    "cohort": "August 2021",
+    "cohort": "21-08",
   },
   {
     "name": "Career Track Final",
-    "cohort": "August 2021",
+    "cohort": "21-08",
   },
   {
     "name": "Foundations I",
-    "cohort": "September 2021",
+    "cohort": "21-09",
   },
   {
     "name": "Foundations II",
-    "cohort": "September 2021",
+    "cohort": "21-09",
   },
   {
     "name": "Career Track Mid",
-    "cohort": "September 2021",
+    "cohort": "21-09",
   },
   {
     "name": "Career Track Final",
-    "cohort": "September 2021",
+    "cohort": "21-09",
   },
   {
     "name": "Foundations I",
-    "cohort": "November 2021",
+    "cohort": "21-11",
   },
   {
     "name": "Foundations II",
-    "cohort": "November 2021",
+    "cohort": "21-11",
+  },
+  {
+    "name": "Career Track Mid",
+    "cohort": "21-11",
+  },
+  {
+    "name": "Career Track Final",
+    "cohort": "21-11",
   }
 ];
+
+export default sprints;
