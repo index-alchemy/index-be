@@ -9,6 +9,7 @@
     "test:watch": "npm run test -- --watch",
     "start": "node -r dotenv/config server.js",
     "start:watch": "nodemon -r dotenv/config server.js",
+    "drop-tables": "node data/drop-tables.js",
     "load-seed-data": "node data/load-seed-data.js",
     "setup-db": "node -r dotenv/config setup-db.js",
     "setup-db:heroku": "heroku run npm run setup-db",
