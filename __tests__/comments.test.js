@@ -8,11 +8,11 @@ describe('test /api/v1/comments routes', () => {
   let user, sprint, pitch;
 
   beforeEach(async () => {
-    await setup(pool);
+    setup(pool);
 
     // sign up a user
     await agent
-      .post('/api/v1/auth/signup')
+      .post('/api/v1/users/auth/signup')
       .send({
         name: 'test',
         email: 'test@test.test',
@@ -23,7 +23,7 @@ describe('test /api/v1/comments routes', () => {
 
     // log in a user
     user = (await agent
-      .post('/api/v1/auth/login')
+      .post('/api/v1/users/auth/login')
       .send({ email: 'test@test.test', password: 'test' })
     ).body;
 
@@ -67,7 +67,7 @@ describe('test /api/v1/comments routes', () => {
     });
   });
 
-  test('GET to /api/v1/comments/user/:user_id and /api/v1/comments/pitch/:pitch_id', async () => {
+  test('GET to /api/v1/users/:id/comments and /api/v1/pitches/:id/comments', async () => {
     // post a comment on a pitch by a user
     await agent
       .post('/api/v1/comments')
@@ -76,16 +76,16 @@ describe('test /api/v1/comments routes', () => {
         pitchId: pitch.id,
         comment: 'very cool idea. What if you used Elm?',
       })
-      ;
+    ;
 
     // get all comments from a user
     const commentsByUser = (await agent
-      .get(`/api/v1/comments/user/${user.id}`)
+      .get(`/api/v1/users/${user.id}/comments`)
     ).body;
 
     // get all comments from a pitch
     const commentsByPitch = (await agent
-      .get(`/api/v1/comments/pitch/${pitch.id}`)
+      .get(`/api/v1/pitches/${pitch.id}/comments`)
     ).body;
 
     // test
@@ -146,7 +146,7 @@ describe('test /api/v1/comments routes', () => {
 
     // get all comments on a pitch
     const comments = (await agent
-      .get(`/api/v1/comments/pitch/${pitch.id}/`)
+      .get(`/api/v1/pitches/${pitch.id}/comments`)
     ).body;
 
     // test

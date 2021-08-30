@@ -21,7 +21,7 @@ describe('pitch routes', () => {
     });
 
     await agent
-      .post('/api/v1/auth/login')
+      .post('/api/v1/users/auth/login')
       .send({
         email: 'email@test.com',
         password: 'test'

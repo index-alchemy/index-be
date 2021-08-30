@@ -15,7 +15,7 @@ describe('preferences routes', () => {
     await setup(pool);
 
     user = (await agent
-      .post('/api/v1/auth/signup')
+      .post('/api/v1/users/auth/signup')
       .send({
         name: 'culi',
         email: 'culi@culi.culi',
@@ -24,7 +24,7 @@ describe('preferences routes', () => {
       })).body;
 
     await agent
-      .post('/api/v1/auth/login')
+      .post('/api/v1/users/auth/login')
       .send({
         email: 'culi@culi.culi',
         password: 'password'
