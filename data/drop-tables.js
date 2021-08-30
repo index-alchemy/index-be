@@ -8,6 +8,7 @@ async function run() {
     await client.query(`
       DROP TABLE IF EXISTS sprints CASCADE;
       DROP TABLE IF EXISTS pitches CASCADE;
+      DROP TABLE IF EXISTS users CASCADE;
     `);
 
     console.log('drop tables complete');
