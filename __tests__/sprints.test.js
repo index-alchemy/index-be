@@ -2,8 +2,7 @@ import pool from '../lib/utils/pool.js';
 import setup from '../data/setup.js';
 import request from 'supertest';
 import app from '../lib/app.js';
-import Sprint from '../lib/models/Sprint.js'
-import AuthService from '../lib/services/AuthService.js'
+import Sprint from '../lib/models/Sprint.js';
 
 describe('sprints routes', () => {
 
@@ -79,9 +78,14 @@ describe('sprints routes', () => {
     const one = await Sprint.createSprint(sprint1);
 
     const res = await agent 
-      .get(`/api/v1/sprints/1`);
+      .get(`/api/v1/sprints/${one.id}`);
 
-    expect(res.body).toEqual({ ...one, createdAt: expect.any(String) });
+    expect(res.body).toEqual({
+      ...one, 
+      pitches: expect.any(Array),
+      preferences: expect.any(Array),
+      createdAt: expect.any(String) 
+    });
   })
 
   it('updates a sprint', async () => {
