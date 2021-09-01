@@ -29,16 +29,16 @@ async function run() {
       })
     );
 
-    await Promise.all(
-      users.map(user => {
-        return client.query(`
-        INSERT INTO users (name, email, cohort, password_hash)
-        VALUES ($1, $2, $3, $4)
-        RETURNING *;
-        `,
-          [user.name, user.email, user.cohort, user.passwordHash]);
-      })
-    );
+    // await Promise.all(
+    //   users.map(user => {
+    //     return client.query(`
+    //     INSERT INTO users (name, email, cohort, password_hash)
+    //     VALUES ($1, $2, $3, $4)
+    //     RETURNING *;
+    //     `,
+    //       [user.name, user.email, user.cohort, user.passwordHash]);
+    //   })
+    // );
 
     console.log('Seed data loaded');
 
