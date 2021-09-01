@@ -1,9 +1,8 @@
+import request from 'supertest';
 import pool from '../lib/utils/pool.js';
 import setup from '../data/setup.js';
-import request from 'supertest';
 import app from '../lib/app.js';
-import Preference from '../lib/models/Preference.js'
-import AuthService from '../lib/services/AuthService.js'
+import Preference from '../lib/models/Preference.js';
 
 describe('preferences routes', () => {
 
@@ -12,23 +11,24 @@ describe('preferences routes', () => {
   let sprint;
 
   beforeEach(async () => {
-    await setup(pool);
+    setup(pool);
 
-    user = (await agent
+    await agent
       .post('/api/v1/users/auth/signup')
       .send({
         name: 'culi',
         email: 'culi@culi.culi',
         password: 'password',
         cohort: 'culi 2021'
-      })).body;
+      });
 
-    await agent
+    user = (await agent
       .post('/api/v1/users/auth/login')
       .send({
         email: 'culi@culi.culi',
         password: 'password'
-      });
+      })
+    ).body;
 
     sprint = (await agent
       .post(`/api/v1/sprints/`)
@@ -38,7 +38,6 @@ describe('preferences routes', () => {
       })
     ).body;
 
-
     return user;
   });
 
@@ -47,19 +46,19 @@ describe('preferences routes', () => {
     userId: '1',
     sprintId: '1',
     preference: ['1', '2', '3', '4']
-  }
+  };
 
   it('creates a preference', async () => {
     const res = await agent
       .post('/api/v1/preferences')
-      .send(preference1)
+      .send(preference1);
 
     expect(res.body).toEqual({
-      id: '1',
+      id: expect.any(String),
       userId: '1',
       sprintId: '1',
       preference: ['1', '2', '3', '4']
-    })
+    });
   })
 
   it('gets all preferences', async () => {
