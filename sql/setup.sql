@@ -10,6 +10,7 @@ CREATE TABLE users (
   email TEXT NOT NULL UNIQUE,
   cohort TEXT,
   password_hash TEXT NOT NULL,
+  is_admin BOOLEAN DEFAULT false,
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
