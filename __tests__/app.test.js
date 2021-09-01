@@ -26,7 +26,7 @@ describe('auth routes', () => {
       name: user.name,
       email: user.email,
       cohort: user.cohort,
-      passwordHash: expect.any(String),
+      passwordHash: null,
       createdAt: expect.any(String),
     });
   });
@@ -49,8 +49,8 @@ describe('auth routes', () => {
       name: user.name,
       email: user.email,
       cohort: user.cohort,
-      passwordHash: expect.any(String),
-      createdAt: expect.any(String),
+      passwordHash: null,
+      createdAt: expect.any(String)
     });
   });
 });
