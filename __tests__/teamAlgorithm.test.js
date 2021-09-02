@@ -141,6 +141,28 @@ const simulations = [
       ['gar', 'dog', 'ant', 'emu', 'bat', 'cat', 'fox']
     ],
     G: 5
+  },
+  {
+    description: '4 of 5 groups, 15 voters with incomplete and duplicates',
+    pitches: ['A', 'B', 'C', 'D', 'E'],
+    preferences: [
+      ['A', 'B', 'C', 'D', 'E'],
+      ['A', 'D', 'C', 'E', 'B'],
+      ['E', 'C', 'E', 'D', 'B'],
+      ['A', 'B', 'C', 'D'],
+      ['A', 'C', 'B', 'D'],
+      ['A', 'C', 'B', 'D'],
+      ['B', 'E', 'A', 'C'],
+      ['D', 'A', 'C', 'B'],
+      ['D', 'C', 'A', 'B'],
+      ['D', 'C', 'B', 'A'],
+      ['E', 'C', 'B', 'A'],
+      ['A', 'B', 'C'],
+      ['D', 'B', 'C'],
+      ['B', 'D'],
+      ['E']
+    ],
+    G: 4
   }
 ];
 
@@ -149,7 +171,7 @@ describe('test simulations', () => {
     for (let i = 0; i < simulations.length; i++) {
       const data = simulations[i];
     
-      const results = teamAlgorithm(data, { raw: false });
+      const results = teamAlgorithm(data, { raw: false, loud: true });
 
       const maxTeamSize = Math.floor(data.preferences.length / data.G) + 1;
 
