@@ -4,10 +4,10 @@
 Index is a collaborative project-brainstorming app. It emphasizes simplicity and usability, from the data structure through to the user interface, to create a reliable, flexible tool. Index allows students to suggest and contribute to project pitches together and then pairs students up into teams to work on those projects based on student preferences.
 
 ## creators
-Annaleigh Hickman
-Austin Summerlin
-Clem Hepburn
-Culi Tif
+- Annaleigh Hickman
+- Austin Summerlin
+- Clem Hepburn
+- Culi Tif
 
 ## tech stack (back-end)
 - Node.js
