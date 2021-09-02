@@ -10,11 +10,11 @@ Clem Hepburn
 Culi Tif
 
 ## tech stack (back-end)
-Node.js
-Express
-postgreSql
-JWT
-Cors
+- Node.js
+- Express
+- postgreSql
+- JWT
+- Cors
 
 ## data structure
 - users
@@ -25,12 +25,14 @@ Cors
   - password_hash
   - is_admin
   - created_at
+ 
 -sprints
   - id
   - name
   - cohort
   - result
   - created_at
+
 - pitches
   - id
   - user_id (references users(id))
@@ -38,11 +40,13 @@ Cors
   - pitch
   - description
   - created_at
+
 - preferences
   - id
   - user_id (references users(id))
   - sprint_id (references sprints(id))
   - preference
+
 - comments
   - id
   - user_id (references users(id))
