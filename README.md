@@ -26,7 +26,7 @@ Culi Tif
   - is_admin
   - created_at
  
--sprints
+- sprints
   - id
   - name
   - cohort
