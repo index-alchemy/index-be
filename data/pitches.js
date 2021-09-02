@@ -1060,7 +1060,127 @@ const pitches = [
     "sprint_id": "34",
     "pitch": "Movi-Bytes",
     "description": "Browse, upvote/downvote movies and add to your personal list to watch later.",
-  }
+  },
+  {
+    "user_id": "null",
+    "sprint_id": "35",
+    "pitch": "Twin Peaks API",
+    "description": "A RESTful API that allows users to search for quotes and character info from Twin Peaks",
+  },
+  {
+    "user_id": "null",
+    "sprint_id": "35",
+    "pitch": "Web Wizard",
+    "description": "Firefox extension to customize webpage CSS",
+  },
+  {
+    "user_id": "null",
+    "sprint_id": "35",
+    "pitch": "Curbee",
+    "description": "Community free stuff alert system",
+  },
+  {
+    "user_id": "null",
+    "sprint_id": "35",
+    "pitch": "Market Scraper",
+    "description": "One stop shop for users looking to purchase items from Craigslist and/or VarageSale.",
+  },
+  {
+    "user_id": "null",
+    "sprint_id": "36",
+    "pitch": "Chordial",
+    "description": "A beautifully designed app that lets users find chord harmonies and create songs",
+  },
+  {
+    "user_id": "null",
+    "sprint_id": "36",
+    "pitch": "Index",
+    "description": "A collaborative project brainstorming app",
+  },
+  {
+    "user_id": "null",
+    "sprint_id": "36",
+    "pitch": "Local Impact",
+    "description": "Make use of the ESRI api to display environmental factors the end user could be concerned about where they live or at locations they pick.",
+  },
+  {
+    "user_id": "null",
+    "sprint_id": "36",
+    "pitch": "Zilch 2.0",
+    "description": "Zilch 2.0 is an interactive multiplayer browser game of chance and skill; based on Zilch, the dice game. With it's responsive design, users can play on their phone or desktop. Utilizing socket.io, multiple rooms will allow for different games to be played simultaneously while players can see their opponent's moves in real time. Users will also be able to view their game history and overall stats through player profiles and the global leaderboard.",
+  },
+  {
+    "user_id": "null",
+    "sprint_id": "36",
+    "pitch": "Tech Wiz Quiz",
+    "description": "A trivia game to help people learn information about coding.",
+  },
+  {
+    "user_id": "null",
+    "sprint_id": "37",
+    "pitch": "Alchegotchi",
+    "description": "Alchegotchi is an interactive virtual pet app, styled to bring back memories of the Tomagotchi toy from the late nineties. The app allows the user to create an account and choose between three different pets to feed, water, and give attention to. It is a feel good app that can be enjoyed by nostalgic adults and kids alike.",
+  },
+  {
+    "user_id": "null",
+    "sprint_id": "37",
+    "pitch": "Okane",
+    "description": "A simple budgeting app to track income, expenses and savings.",
+  },
+  {
+    "user_id": "null",
+    "sprint_id": "37",
+    "pitch": "The Tales of Torr: the Quest to Defeat the Everlasting Dragon",
+    "description": "The Tales of Torr: the Quest to Defeat the Everlasting Dragon is a retro rpg inspired app where you take the role of a brave hero on a quest to, surprise, defeat a dragon.",
+  },
+  {
+    "user_id": "null",
+    "sprint_id": "37",
+    "pitch": "AlcheFeed",
+    "description": "We are BuzzFeed the Alchemy way. Answering the questions that keep you up late at night.",
+  },
+  {
+    "user_id": "null",
+    "sprint_id": "38",
+    "pitch": "AstroLocus",
+    "description": "AstroLocus is a companion app for amateur astronomers to investigate Dark Sky Objects, keep track of objects they want to find in the future, and write logs and upload pictures of their finds. The app includes sky conditions based on the users location to help the user know when conditions are best for star gazing.",
+  },
+  {
+    "user_id": "null",
+    "sprint_id": "38",
+    "pitch": "Triforce Trivia",
+    "description": "Trivia App",
+  },
+  {
+    "user_id": "null",
+    "sprint_id": "38",
+    "pitch": "Birdzai",
+    "description": "Birdzai is the ultimate bird locator app.",
+  },
+  {
+    "user_id": "null",
+    "sprint_id": "38",
+    "pitch": "Hands of Fate",
+    "description": "A tarot-inspired card collector where you, The Fool, set out to struggle against Fate in order to collect 78 unique tarot cards. Fight against the strange Will of Fate, get your tarot read, and reclaim your own destiny!",
+  },
+  {
+    "user_id": "null",
+    "sprint_id": "39",
+    "pitch": "Affirbisiaks",
+    "description": "Text sign up for daily positive affirmations",
+  },
+  {
+    "user_id": "null",
+    "sprint_id": "39",
+    "pitch": "SafeSRC",
+    "description": "24/7 availability, alternatives to calling the police, GPS based, combined with Dimitra’s idea for a Twitter bot, that finds new popups/event/resources",
+  },
+  {
+    "user_id": "null",
+    "sprint_id": "39",
+    "pitch": "Brewster",
+    "description": "An API for cataloging various types of coffee.",
+  },
 ]
 
 export default pitches;
