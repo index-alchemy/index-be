@@ -40,7 +40,7 @@ CREATE TABLE pitches (
   sprint_id BIGINT REFERENCES sprints(id) ON DELETE CASCADE,
   pitch TEXT NOT NULL,
   description TEXT NOT NULL,
-  completed TEXT DEFAULT NULL,
+  repo TEXT DEFAULT NULL,
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
